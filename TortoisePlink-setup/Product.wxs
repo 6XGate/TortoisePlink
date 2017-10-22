@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?include Branding.wxi ?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Product Id="*"
@@ -13,7 +13,7 @@
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<MediaTemplate EmbedCab="yes" />
 
-		<Feature Id="ProductFeature" Title="TortoisePlink.Setup.Base" Level="1">
+		<Feature Id="ProductFeature" Title="$(var.Branding_Product)" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
 		</Feature>
 	</Product>
@@ -37,7 +37,7 @@
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="$(var.Branding_Product)">
-        <File Id="$(var.Branding_Product)Exe"
+        <File Id="$(var.Branding_Product)Exe" Name="$(var.TortoisePlink.TargetFileName)"
               Source="$(var.TortoisePlink.TargetPath)"
               KeyPath="yes" Vital="yes"/>
         <Environment Id="$(var.Branding_Product)ForGit" Action="set" System="yes" Name="GIT_SSH"

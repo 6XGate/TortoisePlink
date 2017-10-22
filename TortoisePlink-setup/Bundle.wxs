@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <?include Branding.wxi ?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
      xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
 	<Bundle Name="$(var.Branding_Product)"
           Version="!(bind.packageVersion.$(var.Branding_Product)_x64)"
           Manufacturer="$(var.Branding_Company)"
+          AboutUrl="$(var.Branding_AboutUrl)"
           UpgradeCode="4D31153D-B709-4EB9-AB2B-E5DD8834A5FA"
-          DisableModify="yes" AboutUrl="https://github.com/6XGate/TortoisePlink">
+          DisableModify="yes">
 		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
-      <bal:WixStandardBootstrapperApplication
-            LicenseUrl="https://github.com/6XGate/TortoisePlink/blob/master/LICENSE"/>
+      <bal:WixStandardBootstrapperApplication LicenseUrl="$(var.Branding_LicenseUrl)"/>
     </BootstrapperApplicationRef>
 
 		<Chain>

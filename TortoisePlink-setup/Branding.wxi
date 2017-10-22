@@ -2,4 +2,6 @@
 <Include>
   <?define Branding_Product="TortoisePlink" ?>
   <?define Branding_Company="Matthew Holder" ?>
+  <?define Branding_AboutUrl="https://github.com/6XGate/TortoisePlink"?>
+  <?define Branding_LicenseUrl="https://github.com/6XGate/TortoisePlink/blob/master/LICENSE"?>
 </Include>
