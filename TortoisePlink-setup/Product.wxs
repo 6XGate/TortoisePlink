@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?include Branding.wxi ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*"
+           Name="$(var.Branding_Product)"
+           Language="1033"
+           Version="!(bind.fileVersion.$(var.Branding_Product)Exe)"
+           Manufacturer="$(var.Branding_Company)"
+           UpgradeCode="3FBE9914-7C19-4C96-B4EA-49927F9835C8">
+		<Package Description="$(var.Branding_Product) Installer"
+             InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="$(var.Branding_Product)" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+  <?if "$(var.Platform)"="x64" ?>
+    <?define ProgramFilesFolder=ProgramFiles64Folder?>
+  <?elseif "$(var.Platform)"="x86"?>
+    <?define ProgramFilesFolder=ProgramFilesFolder?>
+  <?else?>
+    <?error Unsupported platform `$(Platform)` ?>
+  <?endif?>
+
+  <Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="$(var.ProgramFilesFolder)">
+				<Directory Id="INSTALLFOLDER" Name="$(var.Branding_Product)" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="$(var.Branding_Product)">
+        <File Id="$(var.Branding_Product)Exe" Name="$(var.TortoisePlink.TargetFileName)"
+              Source="$(var.TortoisePlink.TargetPath)"
+              KeyPath="yes" Vital="yes"/>
+        <Environment Id="$(var.Branding_Product)ForGit" Action="set" System="yes" Name="GIT_SSH"
+                     Value="[INSTALLFOLDER]$(var.TortoisePlink.TargetFileName)" />
+        <Environment Id="$(var.Branding_Product)ForSvn" Action="set" System="yes" Name="SVN_SSH"
+                     Value="[INSTALLFOLDER]$(var.TortoisePlink.TargetFileName)" />
+        <Environment Id="$(var.Branding_Product)ForCvs" Action="set" System="yes" Name="CVS_SSH"
+                     Value="[INSTALLFOLDER]$(var.TortoisePlink.TargetFileName)" />
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

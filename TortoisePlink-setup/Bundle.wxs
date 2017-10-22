@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?include Branding.wxi ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
+	<Bundle Name="$(var.Branding_Product)"
+          Version="!(bind.packageVersion.$(var.Branding_Product)_x64)"
+          Manufacturer="$(var.Branding_Company)"
+          AboutUrl="$(var.Branding_AboutUrl)"
+          UpgradeCode="4D31153D-B709-4EB9-AB2B-E5DD8834A5FA"
+          DisableModify="yes">
+		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
+      <bal:WixStandardBootstrapperApplication LicenseUrl="$(var.Branding_LicenseUrl)"/>
+    </BootstrapperApplicationRef>
+
+		<Chain>
+      <MsiPackage Id="$(var.Branding_Product)_x86"
+                  SourceFile="$(var.TortoisePlink_x86.TargetPath)"
+                  Compressed="no" InstallCondition="NOT VersionNT64" />
+      <MsiPackage Id="$(var.Branding_Product)_x64"
+                  SourceFile="$(var.TortoisePlink_x64.TargetPath)"
+                  Compressed="no" InstallCondition="VersionNT64" />
+		</Chain>
+	</Bundle>
+</Wix>
