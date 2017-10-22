@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+
+# Basic Dependencies
+gem "github-pages", group: :jekyll_plugins
+
+# Themes
+gem "jekyll-theme-minimal"
