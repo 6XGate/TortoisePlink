@@ -15,7 +15,7 @@ To build this version of TortoisePlink, you will need the following tools:
 - Visual Studio 2017 or better, the Community Edition should work.
     - Must include the Visual C++ components required for build Windows desktop applications.
 	- Must include the Windows 8.1 SDK.
-- WiX, at least 2.9 or better.
+- WiX, at least 3.10 or better.
 
 Though the project for the EXE and each part of the installer may be build via VisualStudio, the
 final part of the installer must be built from the command-line using MSBuild. Simply open a
