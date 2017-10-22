@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{EE890AAA-37BC-49E9-9723-2F6F520BB907}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>TortoisePlink</RootNamespace>
+    <ProjectName>TortoisePlink</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="TortoisePlink.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="TortoisePlink.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="TortoisePlink.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="TortoisePlink.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile />
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\BE_ALL_S.C" />
+    <ClCompile Include="src\be_misc.c" />
+    <ClCompile Include="src\callback.c" />
+    <ClCompile Include="src\CMDLINE.C" />
+    <ClCompile Include="src\CONF.C" />
+    <ClCompile Include="src\CPROXY.C" />
+    <ClCompile Include="src\errsock.c" />
+    <ClCompile Include="src\LDISC.C" />
+    <ClCompile Include="src\LOGGING.C" />
+    <ClCompile Include="src\LoginDialog.cpp" />
+    <ClCompile Include="src\MISC.C" />
+    <ClCompile Include="src\miscucs.c" />
+    <ClCompile Include="src\noterm.c" />
+    <ClCompile Include="src\pgssapi.c" />
+    <ClCompile Include="src\PINGER.C" />
+    <ClCompile Include="src\PORTFWD.C" />
+    <ClCompile Include="src\PROXY.C" />
+    <ClCompile Include="src\RAW.C" />
+    <ClCompile Include="src\RLOGIN.C" />
+    <ClCompile Include="src\SETTINGS.C" />
+    <ClCompile Include="src\SSH.C" />
+    <ClCompile Include="src\SSHAES.C" />
+    <ClCompile Include="src\SSHARCF.C" />
+    <ClCompile Include="src\sshbcrypt.c" />
+    <ClCompile Include="src\SSHBLOWF.C" />
+    <ClCompile Include="src\SSHBN.C" />
+    <ClCompile Include="src\sshccp.c" />
+    <ClCompile Include="src\SSHCRC.C" />
+    <ClCompile Include="src\SSHCRCDA.C" />
+    <ClCompile Include="src\SSHDES.C" />
+    <ClCompile Include="src\SSHDH.C" />
+    <ClCompile Include="src\SSHDSS.C" />
+    <ClCompile Include="src\sshdssg.c" />
+    <ClCompile Include="src\sshecc.c" />
+    <ClCompile Include="src\sshecdsag.c" />
+    <ClCompile Include="src\sshgssc.c" />
+    <ClCompile Include="src\SSHMD5.C" />
+    <ClCompile Include="src\sshprime.c" />
+    <ClCompile Include="src\SSHPUBK.C" />
+    <ClCompile Include="src\SSHRAND.C" />
+    <ClCompile Include="src\SSHRSA.C" />
+    <ClCompile Include="src\sshrsag.c" />
+    <ClCompile Include="src\SSHSH256.C" />
+    <ClCompile Include="src\SSHSH512.C" />
+    <ClCompile Include="src\SSHSHA.C" />
+    <ClCompile Include="src\sshshare.c" />
+    <ClCompile Include="src\SSHZLIB.C" />
+    <ClCompile Include="src\TELNET.C" />
+    <ClCompile Include="src\TIMING.C" />
+    <ClCompile Include="src\TREE234.C" />
+    <ClCompile Include="src\VERSION.C" />
+    <ClCompile Include="src\WILDCARD.C" />
+    <ClCompile Include="src\Windows\wincapi.c" />
+    <ClCompile Include="src\Windows\WINCONS.C" />
+    <ClCompile Include="src\Windows\WINDEFS.C" />
+    <ClCompile Include="src\Windows\wingss.c" />
+    <ClCompile Include="src\Windows\WINHANDL.C" />
+    <ClCompile Include="src\Windows\winhsock.c" />
+    <ClCompile Include="src\Windows\winjump.c" />
+    <ClCompile Include="src\Windows\WINMISC.C" />
+    <ClCompile Include="src\Windows\WINNET.C" />
+    <ClCompile Include="src\Windows\WINNOISE.C" />
+    <ClCompile Include="src\Windows\winnpc.c" />
+    <ClCompile Include="src\Windows\winnps.c" />
+    <ClCompile Include="src\Windows\WINPGNTC.C" />
+    <ClCompile Include="src\Windows\WINPLINK.C" />
+    <ClCompile Include="src\Windows\WINPROXY.C" />
+    <ClCompile Include="src\Windows\winsecur.c" />
+    <ClCompile Include="src\Windows\WINSER.C" />
+    <ClCompile Include="src\Windows\winshare.c" />
+    <ClCompile Include="src\Windows\WINSTORE.C" />
+    <ClCompile Include="src\Windows\WINTIME.C" />
+    <ClCompile Include="src\Windows\winucs.c" />
+    <ClCompile Include="src\Windows\winx11.c" />
+    <ClCompile Include="src\X11FWD.C" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CHARSET\CHARSET.H" />
+    <ClInclude Include="src\INT64.H" />
+    <ClInclude Include="src\LDISC.H" />
+    <ClInclude Include="src\LoginDialog.h" />
+    <ClInclude Include="src\MISC.H" />
+    <ClInclude Include="src\NETWORK.H" />
+    <ClInclude Include="src\pageant.h" />
+    <ClInclude Include="src\pgssapi.h" />
+    <ClInclude Include="src\PROXY.H" />
+    <ClInclude Include="src\PUTTY.H" />
+    <ClInclude Include="src\PUTTYMEM.H" />
+    <ClInclude Include="src\PUTTYPS.H" />
+    <ClInclude Include="src\SSH.H" />
+    <ClInclude Include="src\sshblowf.h" />
+    <ClInclude Include="src\sshbn.h" />
+    <ClInclude Include="src\sshgss.h" />
+    <ClInclude Include="src\sshgssc.h" />
+    <ClInclude Include="src\STORAGE.H" />
+    <ClInclude Include="src\TERMINAL.H" />
+    <ClInclude Include="src\TREE234.H" />
+    <ClInclude Include="src\version.h" />
+    <ClInclude Include="src\Windows\TortoisePlinkRes.h" />
+    <ClInclude Include="src\Windows\wincapi.h" />
+    <ClInclude Include="src\Windows\WINHELP.H" />
+    <ClInclude Include="src\Windows\winsecur.h" />
+    <ClInclude Include="src\Windows\WINSTUFF.H" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\LICENCE" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="src\Windows\PUTTY.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\Windows\TortoisePlink.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
