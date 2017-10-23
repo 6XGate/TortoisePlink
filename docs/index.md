@@ -13,7 +13,7 @@ TortoiseGit package.
 Improved SSH interaction is as simple as downloading and installing TortoisePlink. But a few
 things should be checked.
 
-- Ensure that the `GIT_SSH`, `SVN_SSH`, and `CVS_SSH` [environment variables](https://www.digitalcitizen.life/simple-questions-what-are-environment-variables)
+- Ensure that the `SSH`, `GIT_SSH`, `SVN_SSH`, and `CVS_RSH` [environment variables](https://www.digitalcitizen.life/simple-questions-what-are-environment-variables)
   are **not set** for the user or system.
 - Ensure that you are running the build of PuTTY that matches that of TortoisePlink if you want to
   use Peagent for you SSH keys.
