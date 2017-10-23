@@ -40,11 +40,13 @@
         <File Id="$(var.Branding_Product)Exe" Name="$(var.TortoisePlink.TargetFileName)"
               Source="$(var.TortoisePlink.TargetPath)"
               KeyPath="yes" Vital="yes"/>
+        <Environment Id="$(var.Branding_Product)ForAll" Action="set" System="yes" Name="SSH"
+                     Value="[INSTALLFOLDER]$(var.TortoisePlink.TargetFileName)" />
         <Environment Id="$(var.Branding_Product)ForGit" Action="set" System="yes" Name="GIT_SSH"
                      Value="[INSTALLFOLDER]$(var.TortoisePlink.TargetFileName)" />
         <Environment Id="$(var.Branding_Product)ForSvn" Action="set" System="yes" Name="SVN_SSH"
                      Value="[INSTALLFOLDER]$(var.TortoisePlink.TargetFileName)" />
-        <Environment Id="$(var.Branding_Product)ForCvs" Action="set" System="yes" Name="CVS_SSH"
+        <Environment Id="$(var.Branding_Product)ForCvs" Action="set" System="yes" Name="CVS_RSH"
                      Value="[INSTALLFOLDER]$(var.TortoisePlink.TargetFileName)" />
       </Component>
 		</ComponentGroup>
