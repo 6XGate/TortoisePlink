@@ -6,7 +6,7 @@ markdown: kramdown
 theme: jekyll-theme-minimal
 
 # Repository settings; only needed locally
-repository: 6XGate/TortoisePlink
+# repository: 6XGate/TortoisePlink
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
