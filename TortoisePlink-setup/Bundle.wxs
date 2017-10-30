@@ -15,10 +15,10 @@
 		<Chain>
       <MsiPackage Id="$(var.Branding_Product)_x86"
                   SourceFile="$(var.TortoisePlink_x86.TargetPath)"
-                  Compressed="no" InstallCondition="NOT VersionNT64" />
+                  Compressed="yes" InstallCondition="NOT VersionNT64" />
       <MsiPackage Id="$(var.Branding_Product)_x64"
                   SourceFile="$(var.TortoisePlink_x64.TargetPath)"
-                  Compressed="no" InstallCondition="VersionNT64" />
+                  Compressed="yes" InstallCondition="VersionNT64" />
 		</Chain>
 	</Bundle>
 </Wix>
