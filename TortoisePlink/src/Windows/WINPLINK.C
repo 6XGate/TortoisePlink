@@ -15,12 +15,20 @@
 
 #define WM_AGENT_CALLBACK (WM_APP + 4)
 
+extern int console_batch_mode;
+
 struct agent_callback {
     void (*callback)(void *, void *, int);
     void *callback_ctx;
     void *data;
     int len;
 };
+
+void messagebox(char *stuff, char *morestuff, unsigned mask)
+{
+	if (!console_batch_mode)
+	MessageBox(GetParentHwnd(), stuff, morestuff, mask);
+}
 
 void fatalbox(const char *p, ...)
 {
@@ -31,7 +39,7 @@ void fatalbox(const char *p, ...)
 	stuff = dupvprintf(p, ap);
 	va_end(ap);
 	sprintf(morestuff, "%.70s Fatal Error", appname);
-	MessageBox(GetParentHwnd(), stuff, morestuff, MB_ICONERROR | MB_OK);
+	messagebox(stuff, morestuff, MB_ICONERROR | MB_OK);
 	sfree(stuff);
     if (logctx) {
         log_free(logctx);
@@ -48,7 +56,7 @@ void modalfatalbox(const char *p, ...)
 	stuff = dupvprintf(p, ap);
 	va_end(ap);
 	sprintf(morestuff, "%.70s Fatal Error", appname);
-	MessageBox(GetParentHwnd(), stuff, morestuff,
+	messagebox(stuff, morestuff,
 		MB_SYSTEMMODAL | MB_ICONERROR | MB_OK);
 	sfree(stuff);
     if (logctx) {
@@ -66,7 +74,7 @@ void nonfatal(const char *p, ...)
     stuff = dupvprintf(p, ap);
     va_end(ap);
     sprintf(morestuff, "%.70s Fatal Error", appname);
-    MessageBox(GetParentHwnd(), stuff, morestuff,
+    messagebox(stuff, morestuff,
         MB_SYSTEMMODAL | MB_ICONERROR | MB_OK);
     sfree(stuff);
     if (logctx)
@@ -84,7 +92,7 @@ void connection_fatal(void *frontend, const char *p, ...)
 	stuff = dupvprintf(p, ap);
 	va_end(ap);
 	sprintf(morestuff, "%.70s Fatal Error", appname);
-	MessageBox(GetParentHwnd(), stuff, morestuff,
+	messagebox(stuff, morestuff,
 		MB_SYSTEMMODAL | MB_ICONERROR | MB_OK);
 	sfree(stuff);
     if (logctx) {
@@ -102,7 +110,7 @@ void cmdline_error(const char *p, ...)
 	stuff = dupvprintf(p, ap);
 	va_end(ap);
 	sprintf(morestuff, "%.70s Command Line Error", appname);
-	MessageBox(GetParentHwnd(), stuff, morestuff, MB_ICONERROR | MB_OK);
+	messagebox(stuff, morestuff, MB_ICONERROR | MB_OK);
 	sfree(stuff);
     exit(1);
 }
@@ -380,7 +388,7 @@ int main(int argc, char **argv)
 	    } else if (ret == 1) {
 		continue;
 	    } else if (!strcmp(p, "-batch")) {
-			// ignore and do not print an error message
+			console_batch_mode = TRUE;
 	    } else if (!strcmp(p, "-s")) {
 		/* Save status to write to conf later. */
 		use_subsystem = 1;
